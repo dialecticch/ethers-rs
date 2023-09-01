@@ -196,7 +196,7 @@ pub struct NormalTransaction {
     pub gas_price: Option<U256>,
     #[serde(rename = "txreceipt_status")]
     pub tx_receipt_status: String,
-    pub input: Bytes,
+    pub input: String,
     #[serde(with = "json_string")]
     pub contract_address: Option<Address>,
     #[serde(deserialize_with = "deserialize_stringified_numeric")]
@@ -205,8 +205,8 @@ pub struct NormalTransaction {
     pub cumulative_gas_used: U256,
     #[serde(deserialize_with = "deserialize_stringified_u64")]
     pub confirmations: u64,
-    #[serde(with = "hex_string")]
-    pub method_id: Option<H32>,
+    //#[serde(with = "hex_string")]
+    pub method_id: Option<String>,
     #[serde(with = "json_string")]
     pub function_name: Option<String>,
 }
